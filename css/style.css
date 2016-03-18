@@ -270,23 +270,18 @@ header {
 
 
 
-/*================================================
-　　団体概要
- ================================================*/
-
-
-
 
 /*================================================
  *  グローバルナビゲーション
  ================================================*/
 
 @media screen and (min-width:1000px) {
+
 	nav {
 		background:#ff3333;
 		border-bottom:5px solid #710000;
 		box-shadow:0 1px 3px #999;
-		z-index:3;
+		z-index:1;
                 font-size:27px;
                 line-height:2.0;
 
@@ -295,6 +290,7 @@ header {
 		margin:0;
 		padding:0;
 	}
+
 	nav li {
 		position:relative;
 		width:17%;
@@ -304,77 +300,22 @@ header {
 		text-align:center;
 		list-style:none;
 	}
+
 	nav li:first-child {
 		width:13%;
 	}
 
-	nav li:hover:before,
-	nav li:hover + li:before,
-	nav li:last-child:hover:after,
-	nav li li:before,
-	nav li li:after {
-		display:none;
-	}
-	nav li:last-child li {
-		left:-50%;
-	}
 	nav li a {
 		display:block;
-		padding:10px 0;
+		padding:9px 0;
 		color:#fff;
 		font-weight:bold;
 		text-decoration:none;
 	}
-	nav li ul {
-		position:absolute;
-		top:100%;
-		left:0;
-		margin:0;
-		padding:0;
-		border-radius:0 0 3px 3px;
-		z-index:3;
-	}
-	nav li ul li {
-		overflow:hidden;
-		width:150%;
-		height:0;
-		-moz-transition:.2s;
-		-webkit-transition:.2s;
-		-o-transition:.2s;
-		-ms-transition:.2s;
-		transition:.2s;
-	}
-	nav li li:first-child {
-		width:150%;
-	}
-	nav li ul li a {
-		padding:10px 15px;
-		background:#7c0c0c;
-		text-align:left;
-		font-weight:normal;
-	}
+
 	nav li:hover > a {
 		background:#7c0c0c;
 		color:#fff;
-	}
-	nav li:hover > a:hover {
-		background:#710000;
-	}
-
-	.showNav {
-		background:#7c0c0c !important;
-	}
-
-	.showSub {
-		overflow:visible;
-		height:42px;
-		border-bottom:2px solid #8c0e0e;
-	}
-	.showSub:last-child {
-		border-bottom:0;
-	}
-	.showSub:last-child a {
-		border-radius:0 0 3px 3px;
 	}
 
 	.fixed {
@@ -383,10 +324,6 @@ header {
 		left:0;
 	}
 }
-
-
-
-
 
 
 
@@ -605,103 +542,106 @@ footer {
 
 .moto {
         position:absolute;
+        width:35%;
         top:100;
-				margin: auto;
-				left: 0;
+	      margin: auto;
+	      left: 0;
         right: 0;
         z-index:1;
 }
 
-.slide {
-	position:relative;
-	overflow:hidden;
-	margin:0px 0;
-	border: 0px solid #333 ;
+
+/* slide01 */
+.slide01 {
+     overflow:hidden;
+     position:relative;
 }
 
-.slidePrev {
-	position:absolute;
-	cursor:pointer;
-	z-index:2;
+.slide01 .slidePrev {
+    position:absolute;
+    cursor:pointer;
+    z-index:100;
 }
 
-.slideNext {
-	position:absolute;
-	cursor:pointer;
-	z-index:2;
+.slide01 .slideNext {
+    position:absolute;
+    cursor:pointer;
+    z-index:100;
 }
 
-.slidePrev img {
-	position:absolute;
-	width:100px !important;
-	height:90px !important;
+.slide01 .slidePrev img {
+    position:absolute;
+    width:50px !important;
+    height:60px !important;
 }
 
-.slideNext img {
-	position:absolute;
-	width:100px !important;
-	height:90px !important;
+.slide01 .slideNext img {
+    position:absolute;
+    width:50px !important;
+    height:60px !important;
 }
 
-.slideInner {
-	position:relative;
-	margin:0 5px 0;
-	padding:0;
+.slide01 .slideInner {
+    position:relative;
+    margin:0;
+    padding:0;
 }
-.slideInner li {
-	float:left;
-	margin:0;
-	padding:0;
-	list-style:none;
+.slide01 .slideInner li {
+    float:left;
+    margin:0;
+    padding:0;
+    list-style:none;
 }
-.slideInner li img {
-	margin:0 5px;
-	padding:0;
-}
-
-.filterPrev {
-	position:absolute;
-	left:0;
-	opacity:0.5;
-	filter:alpha(opacity=50);
-	background-color:#fff;
+.slide01 .slideInner li img {
+    margin:0 5px;
+    padding:0;
+    vertical-align:bottom;
 }
 
-.filterNext {
-	position:absolute;
-	right:0;
-	opacity:0.5;
-	filter:alpha(opacity=50);
-	background-color:#fff;
+.slide01 .filterPrev {
+    position:absolute;
+    left:0;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    background-color:#fff;
 }
 
-.controlNav {
-	position:relative;
-	float:left;
-	left:50%;
+.slide01 .filterNext {
+    position:absolute;
+    right:0;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    background-color:#fff;
 }
-.controlNav span {
-	position:relative;
-	left:-50%;
-	float:left;
-	margin:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
-	width:10px;
-	height:10px;
-	overflow:hidden;
-	background:#ccc;
-	text-indent:-9999px;
-	vertical-align:middle;
+
+.slide01 .controlNav {
+      position:relative;
+      float:left;
+      left:50%;
 }
-.controlNav span:hover {
-	background:#999;
-	cursor:pointer;
+.slide01 .controlNav span {
+      position:relative;
+      left:-50%;
+      float:left;
+      margin:5px;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      border-radius:5px;
+      width:10px;
+      height:10px;
+      overflow:hidden;
+      background:#ccc;
+      text-indent:-9999px;
+      vertical-align:middle;
 }
-.controlNav span.current {
-	background:#BB0000;
+.slide01 .controlNav span:hover {
+      background:#999;
+      cursor:pointer;
 }
+.slide01 .controlNav span.current {
+      background:#f19500;
+}
+
 
 /*================================================
  *  タブレット向けデザイン
@@ -726,6 +666,7 @@ footer {
 /*================================================
  *  スマートフォン向けデザイン
  ================================================*/
+
 @media screen and (max-width:640px) {
 	.lock {
 		overflow:hidden;
@@ -804,64 +745,6 @@ footer {
 		width:100%;
 	}
 
-	nav {width: 100%;
-	}
-
-	nav ul {
-		margin:0;
-		padding:0;
-		}
-
-	nav .inner > ul {
-		z-index:2;
-		overflow:auto;
-		position:fixed;
-		top:53px;
-		right:0;
-		width:100%;
-		height:88%;
-		height:-webkit-calc(100% - 53px);
-		height:calc(100% - 53px);
-	}
-	nav li {
-		position:relative;
-		width:100%;
-		float:none;
-		margin:0;
-		text-align:left;
-		list-style:none;
-		border-bottom:1px solid #8c0e0e;
-		background:#9b0f0f;
-	}
-
-	nav li:first-child {
-		border-top:0;
-	}
-	nav li:last-child {
-		border-bottom:0;
-	}
-
-	nav li a {
-		display:block;
-		padding:10px 30px;
-		color:#fff;
-		text-decoration:none;
-		background:#9b0f0f;
-	}
-	nav li a:hover {
-		color:#fff;
-		background:#710000;
-	}
-	nav ul ul {
-		display:none;
-		position:relative;
-	}
-	nav li li a {
-		box-sizing:border-box;
-		width:100%;
-		padding:10px 30px 10px 50px;
-		text-align:left;
-	}
 
 	.subnav > a:before {
 		display:block;
