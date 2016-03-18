@@ -281,7 +281,7 @@ header {
 		background:#ff3333;
 		border-bottom:5px solid #710000;
 		box-shadow:0 1px 3px #999;
-		z-index:1;
+		z-index:2;
                 font-size:27px;
                 line-height:2.0;
 
@@ -325,7 +325,8 @@ header {
 	}
 }
 
-
+.inner2 ul  {  display: none; }
+.inner3 ul  {  display: none; }
 
 /*================================================
  *  メンバー
@@ -544,8 +545,8 @@ footer {
         position:absolute;
         width:35%;
         top:100;
-	      margin: auto;
-	      left: 0;
+	margin: auto;
+	left: 0;
         right: 0;
         z-index:1;
 }
@@ -560,25 +561,26 @@ footer {
 .slide01 .slidePrev {
     position:absolute;
     cursor:pointer;
-    z-index:100;
+    z-index:1;
 }
 
 .slide01 .slideNext {
     position:absolute;
     cursor:pointer;
-    z-index:100;
+    z-index:1;
 }
 
 .slide01 .slidePrev img {
+
     position:absolute;
-    width:50px !important;
-    height:60px !important;
+    width:70px !important;
+    height:70px !important;
 }
 
 .slide01 .slideNext img {
     position:absolute;
-    width:50px !important;
-    height:60px !important;
+    width:70px !important;
+    height:70px !important;
 }
 
 .slide01 .slideInner {
@@ -735,15 +737,38 @@ footer {
 		margin-top:15px;
 	}
 
-	#main {
+	#main { margin:auto;
+                left:0;
+                light:0;
 		float:none;
 		width:100%;
 	}
 
-	#sub {
+	#sub {	margin: auto;
+	        left: 0;
+	        right: 0;
 		float:none;
 		width:100%;
 	}
+
+   .inner ul {
+                display: none;
+}
+    .inner2 ul  {
+			          position:absolute;
+								left: auto;
+			          display: block;
+							  width: 22%;
+								z-index:2;
+}
+
+    .inner3 ul {
+						position:absolute;
+						right: 10px;
+						display: block;
+						width: 22%;
+						z-index:2;
+}
 
 
 	.subnav > a:before {
@@ -845,11 +870,6 @@ footer {
 		transform:rotate(-135deg);
 		-webkit-transform:rotate(-135deg);
 	}
-
-
-
-
-
 
 .appIconBig{
  display: block;
