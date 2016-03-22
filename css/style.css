@@ -14,6 +14,7 @@ body {
 	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
 	line-height:1.6;
 	background:#fff;
+  background-image: url("../img/.jpg")
 }
 
 p.text200 { font-size: 200%; }
@@ -333,21 +334,27 @@ header {
 /*================================================
  *  メンバー
  ================================================*/
+#member {margin-top: 10px}
+#mamber img {
+  width: 80%;
+	height: auto;
+	width :auto;　}
+
 .member1 {
-background: url("../img/sixyuu.jpg") center no-repeat;
+background: url("../img/nanae2.jpg") center no-repeat;
 margin-bottom: 10px;
 }
 .member2 {
-background: url("../img/pns.jpg") no-repeat;
+background: url("../img/bannai2.jpg") no-repeat;
 margin-bottom: 10px;
 }
 .member3 {
-background: url("../img/sixyuu.jpg") no-repeat;
+background: url("../img/marina2.jpg") no-repeat;
 margin-bottom: 10px;
 
 }
 .member4 {
-background: url("../img/sixyuu.jpg") no-repeat;
+background: url("../img/fusae2.jpg") no-repeat;
 margin-bottom: 10px;
 }
 
@@ -486,7 +493,7 @@ footer {
 	text-decoration:none;
 }
 .totop img {
-	background:#710000;
+	background:#87cefa;
 }
 .totop img:hover {
 	background:#900000;
@@ -545,8 +552,8 @@ footer {
 
 .moto {
         position:absolute;
-        width:35%;
-        top:100;
+        width:15%;
+        top:340px;
 	margin: auto;
 	left: 0;
         right: 0;

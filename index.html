@@ -37,7 +37,7 @@ $(function($){
         nextPosition  : 0,
         filterNav     : true,
         viewSlide     : 1,
-        baseWidth     : 940,
+        baseWidth     : 1000,
         navImg       : false,
         navImgCustom : false,
         navImgSuffix : ''
@@ -58,12 +58,12 @@ $(function($){
 <nav>
 	<div class="inner">
 		<ul class="gnav">
-		        <li><a href="#"><img src="img/homesmole.png"alt="home"></a></li>
-			<li><a href="#play1">OUTLINE</a><li/>
-			<li><a href="#play2">MEMBER</a></li>
-			<li><a href="#play3">SAMPLE</a></li>
-			<li><a href="#play4">LINK</a><li/>
-                        <li><a href="contact.html">CONTACT</a></a><li/>
+		  <li><a href="#"><img src="img/homesmole.png"alt="home"></a></li>
+			<li><a href="#outline">OUTLINE</a><li/>
+			<li><a href="#member">MEMBER</a></li>
+			<li><a href="#gallery">GALLERY</a></li>
+			<li><a href="#link">LINK</a><li/>
+      <li><a href="contact.html">CONTACT</a></a><li/>
 				</ul>
 			</li>
 		</ul>
@@ -89,13 +89,13 @@ $(function($){
 
 
 
-<img src="img/gakusei.png" width="500" class="moto">
+<img src="img/gakusei.png" class="moto">
 
 
 <div class="slide01">
     <ul class="slideInner">
-        <li><a href="index.html"><img src="img/saka.jpg" alt=""></a></li>
-        <li><a href="index.html"><img src="img/saka.jpg" alt=""></a></li>
+        <li><a href="index.html"><img src="img/bannaikamera.jpg" alt=""></a></li>
+        <li><a href="index.html"><img src="img/nanaeike2.jpg" alt=""></a></li>
         <li><a href="index.html"><img src="img/saka.jpg" alt=""></a></li>
     </ul>
     <div class="slidePrev"><img src="img/left70.png" alt="前へ"></div>
@@ -105,7 +105,7 @@ $(function($){
 
 
 
-                <DIV class="infobox">
+                <div class="infobox">
 
 		<dl class="info">
 			<dt><span>20XX-01-01</span></dt>
@@ -142,29 +142,28 @@ $(“img.lazy”).lazyload();
 
 
 <div id="contents">
+  <div id="outline">
 
                         <h3>概要</h3>
                         <p>学生サークル株式会社NANAEMARU。は現役大学生による制作団体です。<br>
                            CG作成から撮影、イラスト、編集まで幅広いジャンルのメンバーによる若者の感性と若さをぜひご体験ください。<p/>
+</div>
+
+
 
 
 	<div id="main">
 
-
-
-
-
 		<div class="col_two_one">
 
 
+<div id="member">
 
 			<h3>メンバー</h3>
-<!-- member 1 -->
+
 			<ul>
-                        <li>
-
-
-<div class="member1"><a href="#"><img src="img/nanaekami.jpg" height="300" alt=""></a></div>
+<li><!-- member 1 -->
+<div class="member1"><a href="#"><img src="img/nanae1.jpg" alt=""></a></div>
 
 				<h4>瀧本七菜恵</h4>
 				<p>
@@ -173,9 +172,9 @@ $(“img.lazy”).lazyload();
              好きな学食 : カルボナーラ
 			</p>
 				</li>
-				<li>
-<!-- member 2 -->
-<div class="member2"><a href="#"><img src="img/bannnaiseihoukei.jpg" height="300" alt=""></a></div>
+
+<li><!-- member 2 -->
+<div class="member2"><a href="#"><img src="img/bannnai1.jpg"  alt=""></a></div>
 
 				<h4>坂内友樹</h4>
 				<p>
@@ -183,9 +182,9 @@ $(“img.lazy”).lazyload();
 							好きな授業 : 体育<br>
 							好きな学食 : カルボナーラ
 				　</li>
-				<li>
-<!-- member 3 -->
-<div class="member3"><a href="#"><img src="img/yamada.jpg" height="300" alt=""></a></div>
+
+<li><!-- member 3 -->
+<div class="member3"><a href="#"><img src="img/marina1.jpg"  alt=""></a></div>
 
 				<h4>上野真理奈</h4>
 				<p>
@@ -193,9 +192,9 @@ $(“img.lazy”).lazyload();
 			        好きな授業 : 体育<br>
 		        	好きな学食 : カルボナーラ
 				</li>
-				 <li>
-<!-- member 4 -->
-<div class="member4"><a href="#"><img src="img/yamada.jpg" height="300" alt=""></a></div>
+
+<li><!-- member 4 -->
+<div class="member4"><a href="#"><img src="img/fusae1.jpg" alt=""></a></div>
 
 				<h4>石部総依</h4>
 				<p>
@@ -205,13 +204,19 @@ $(“img.lazy”).lazyload();
 
 			</ul>
 
+</div>
 
-　　　　　　　　　　　　<h3>サンプル</h3>
+<div id="gallery">
+　　　　　　　　　　　　<h3>ギャラリー</h3>
                         <img src="img/hpkari.png" height="120" alt="">
+                      <p class="textR"><a href="#">&raquo;サンプルをもっと見る</a></p>
+                      </div>
+<div id="link">
                         <h3>リンク</h3>
                         <img src="img/hpkari.png" height="120" alt="">
+</div>
 
-			<p class="textR"><a href="index.html">&raquo;もっと見る</a></p>
+
 		</div><!-- /.staff -->
 	</div><!-- /#main -->
 
@@ -220,10 +225,9 @@ $(“img.lazy”).lazyload();
 	<div id="sub">
 
 
-<!-- start TweetsWind code -->
 <div>
 <iframe     scrolling="no" frameborder="0" id="twitterWindIframe"     style="width:320px;height:450px; border:none;"     src="http://www.tweetswind.com/show?option=%7B%22isOnlyMe%22%3A%20%22false%22%2C%20%22twitterwind_frame_width%22%3A%20%22320%22%2C%20%22twitterwind_frame_height%22%3A%20%22450%22%2C%20%22twitterwind_frame_border%22%3A%20%22none%22%2C%20%22twitterwind_frame_border_color%22%3A%20%22C0DEED%22%2C%20%22twitterwind_base_font_size%22%3A%20%2212%22%2C%20%22twitterwind_logoimage%22%3A%20%22whiteonblue%22%2C%20%22twitterwind_username%22%3A%20%22on%22%2C%20%22twitterwind_username_bgcolor%22%3A%20%22FFFFFF%22%2C%20%22twitterwind_username_color%22%3A%20%22333333%22%2C%20%22twitterwind_username_follow%22%3A%20%22on%22%2C%20%22twitterwind_max_length%22%3A%20%2239%22%2C%20%22twitterwind_logo_bgcolor%22%3A%20%22C7EEFC%22%2C%20%22twitterwind_twit%22%3A%20%22on%22%2C%20%22twitterwind_twit_scroll_color%22%3A%20%22C0DEED%22%2C%20%22twitterwind_twit_scroll_bg_color%22%3A%20%22FFFFFF%22%2C%20%22twitterwind_twit_bgcolor%22%3A%20%22FFFFFF%22%2C%20%22twitterwind_twit_color%22%3A%20%22333333%22%2C%20%22twitterwind_twit_link_color%22%3A%20%220084B4%22%2C%20%22twitterwind_opacity%22%3A%20%22off%22%2C%20%22twitterwind_follower%22%3A%20%22none%22%2C%20%22twitterwind_follower_bgcolor%22%3A%20%22FFFFFF%22%2C%20%22usn%22%3A%20%22160674%22%7D"     > </iframe>
-<!--利用規約に従ってページ内に必ずリンクを表示してください-->
+
 <div style="font-size:12px; text-align:right; width:320px"><a target="_blank" href="http://www.tweetswind.com">TweetsWind</a></div>
 </div>
 <!-- end TweetsWind code -->
@@ -231,17 +235,10 @@ $(“img.lazy”).lazyload();
 
 
 
-		<h3>見出し</h3>
-		<ul class="submenu">
-			<li><a href="index.html">ああああ</a></li>
-			<li><a href="index.html">いいいい</a></li>
-			<li><a href="index.html">うううう</a></li>
-			<li><a href="index.html">ええええ</a></li>
-			<li><a href="index.html">おおおお</a></li>
-		</ul>
+
 		<h3>h3タグ</h3>
 		<p>
-		メモ：サブコンテンツはバナーを掲載するのに便利。ulタグに『class="bnr"』とすれば、きれいに画像が並ぶらしい。
+		メモ：。ulタグに『class="bnr"』とすれば、きれいに画像が並ぶ。
 		</p>
 		<ul class="bnr">
 			<li><a href="index.html"><img src="img/banner.png" alt=""></a></li>
@@ -260,8 +257,10 @@ $(“img.lazy”).lazyload();
 			<li><a href="index.html">HOME</a></li>
 			<li><a href="index.html">会社情報</a></li>
 			<li><a href="index.html">商品情報</a></li>
-			<li><a href="index.html">サイトポリシー</a></li>
-			<li><a href="index.html">プライバシーポリシー</a></li>
+			<li><a href="index.html">サイトポリシーについて</a></li>
+			<li><a href="index.html">プライバシーポリシーについて</a></li>
+			<li><a href="index.html">お問い合わせ</a></li>
+			<li><a href="sample.html">サイトマップ</a></li>
 		</ul>
 	</div><!-- /.footmenu -->
 	<div class="copyright">Copyright &#169; 2016 - 2016 SITENAME All Rights Reserved.</div><!-- /.copyright -->
