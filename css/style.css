@@ -674,13 +674,17 @@ footer {
 		width:100%;
 	}
 }
+	p { font-size : 17px ; }
 
+	.inner ul {
+							 display: block;
+}
 /*================================================
  *  スマートフォン向けデザイン
  ================================================*/
 
-@media screen and (max-width:767px) {
-@media screen and (max-width:640px) {
+@media screen and (max-width:413px) {
+
 	.lock {
 		overflow:hidden;
 		height:100%;
@@ -721,14 +725,14 @@ footer {
 		margin-top:15px;
 	}
 
-	#main { 
+	#main {
                 left:0;
                 right:0;
 		float:none;
 		width:100%;
 	}
 
-	#sub {	
+	#sub {
                 left:0;
 	        right:0;
 		float:none;
@@ -865,4 +869,3 @@ footer {
  margin-left: auto;
  margin-right: auto;
 }
-
