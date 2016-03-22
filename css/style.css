@@ -31,10 +31,11 @@ p.text400 {
 	margin:0 auto;
 }
 
-header {
+header img {
 	box-sizing:border-box;
 	position:relative;
-	width:50%;
+  max-width:100%;
+	margin-bottom: 30px;
 	background:#F0F8FF;
 }
 
