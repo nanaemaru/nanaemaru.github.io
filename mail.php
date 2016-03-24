@@ -4,7 +4,7 @@
 #
 #  PHPメールプログラム　フリー版 最終更新日2014/12/12
 #　改造や改変は自己責任で行ってください。
-#	
+#
 #  今のところ特に問題点はありませんが、不具合等がありましたら下記までご連絡ください。
 #  MailAddress: info@php-factory.net
 #  name: K.Numata
@@ -33,7 +33,7 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 //---------------------------　必須設定　必ず設定してください　-----------------------
 
 //サイトのトップページのURL　※デフォルトでは送信完了後に「トップページへ戻る」ボタンが表示されますので
-$site_top = "http://www.php-factory.net/";
+$site_top = "http://nanaemaru.herokuapp.com/";
 
 // 管理者メールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
 $to = "st.nanaemaru@gmail.com";
@@ -84,7 +84,7 @@ $thanksPage = "http://xxx.xxxxxxxxx/thanks.html";
 $requireCheck = 0;
 
 /* 必須入力項目(入力フォームで指定したname属性の値を指定してください。（上記で1を設定した場合のみ）
-値はシングルクォーテーションで囲み、複数の場合はカンマで区切ってください。フォーム側と順番を合わせると良いです。 
+値はシングルクォーテーションで囲み、複数の場合はカンマで区切ってください。フォーム側と順番を合わせると良いです。
 配列の形「name="○○[]"」の場合には必ず後ろの[]を取ったものを指定して下さい。*/
 $require = array('お名前','Email');
 
@@ -101,7 +101,7 @@ $remail = 0;
 $refrom_name = "";
 
 // 差出人に送信確認メールを送る場合のメールのタイトル（上記で1を設定した場合のみ）
-$re_subject = "送信ありがとうございました";
+$re_subject = "株式会社ＮＡＮＡＥＭＡＲＵ。よりメール送信完了のお知らせ";
 
 //フォーム側の「名前」箇所のname属性の値　※自動返信メールの「○○様」の表示で使用します。
 //指定しない、または存在しない場合は、○○様と表示されないだけです。あえて無効にしてもOK
@@ -109,6 +109,7 @@ $dsp_name = 'お名前';
 
 //自動返信メールの冒頭の文言 ※日本語部分のみ変更可
 $remail_text = <<< TEXT
+
 
 お問い合わせありがとうございました。
 早急にご返信致しますので今しばらくお待ちください。
@@ -119,18 +120,18 @@ TEXT;
 
 
 //自動返信メールに署名（フッター）を表示(する=1, しない=0)※管理者宛にも表示されます。
-$mailFooterDsp = 0;
+$mailFooterDsp = 1;
 
 //上記で「1」を選択時に表示する署名（フッター）（FOOTER～FOOTER;の間に記述してください）
 $mailSignature = <<< FOOTER
 
 ──────────────────────
-株式会社○○○○　佐藤太郎
+株式会社ＮＡＮＡＥＭＡＲＵ。　
 〒150-XXXX 東京都○○区○○ 　○○ビル○F　
 TEL：03- XXXX - XXXX 　FAX：03- XXXX - XXXX
 携帯：090- XXXX - XXXX 　
-E-mail:xxxx@xxxx.com
-URL: http://www.php-factory.net/
+E-mail:st.nanaemaru@gmail.com
+URL: http://nanaemaru.herokuapp.com/
 ──────────────────────
 
 FOOTER;
@@ -195,9 +196,9 @@ if(empty($errm)){
 		}
 	}
 }
-  
+
 if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
-	
+
 	//差出人に届くメールをセット
 	if($remail == 1) {
 		$userBody = mailToUser($_POST,$dsp_name,$remail_text,$mailFooterDsp,$mailSignature,$encode);
@@ -208,11 +209,11 @@ if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
 	$adminBody = mailToAdmin($_POST,$subject,$mailFooterDsp,$mailSignature,$encode,$confirmDsp);
 	$header = adminHeader($userMail,$post_mail,$BccMail,$to);
 	$subject = "=?iso-2022-jp?B?".base64_encode(mb_convert_encoding($subject,"JIS",$encode))."?=";
-	
+
 	mail($to,$subject,$adminBody,$header);
 	if($remail == 1 && !empty($post_mail)) mail($post_mail,$re_subject,$userBody,$reheader);
 }
-else if($confirmDsp == 1){ 
+else if($confirmDsp == 1){
 
 /*　▼▼▼送信確認画面のレイアウト※編集可　オリジナルのデザインも適用可能▼▼▼　*/
 ?>
@@ -285,7 +286,7 @@ p.error_messe{
 /* ▲▲▲送信確認画面のレイアウト　※オリジナルのデザインも適用可能▲▲▲　*/
 }
 
-if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 && $sendmail == 0))) { 
+if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 && $sendmail == 0))) {
 
 /* ▼▼▼送信完了画面のレイアウト　編集可 ※送信完了後に指定のページに移動しない場合のみ表示▼▼▼　*/
 ?>
@@ -313,15 +314,15 @@ if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 &&
 <!--  CV率を計測する場合ここにAnalyticsコードを貼り付け -->
 </body>
 </html>
-<?php 
+<?php
 /* ▲▲▲送信完了画面のレイアウト 編集可 ※送信完了後に指定のページに移動しない場合のみ表示▲▲▲　*/
   }
 }
 //確認画面無しの場合の表示、指定のページに移動する設定の場合、エラーチェックで問題が無ければ指定ページヘリダイレクト
-else if(($jumpPage == 1 && $sendmail == 1) || $confirmDsp == 0) { 
+else if(($jumpPage == 1 && $sendmail == 1) || $confirmDsp == 0) {
 	if($empty_flag == 1){ ?>
 <div align="center"><h4>入力にエラーがあります。下記をご確認の上「戻る」ボタンにて修正をお願い致します。</h4><div style="color:red"><?php echo $errm; ?></div><br /><br /><input type="button" value=" 前画面に戻る " onClick="history.back()"></div>
-<?php 
+<?php
 	}else{ header("Location: ".$thanksPage); }
 }
 
@@ -363,7 +364,7 @@ function postToMail($arr){
 	foreach($arr as $key => $val) {
 		$out = '';
 		if(is_array($val)){
-			foreach($val as $key02 => $item){ 
+			foreach($val as $key02 => $item){
 				//連結項目の処理
 				if(is_array($item)){
 					$out .= connect2val($item);
@@ -372,10 +373,10 @@ function postToMail($arr){
 				}
 			}
 			$out = rtrim($out,', ');
-			
+
 		}else{ $out = $val; }//チェックボックス（配列）追記ここまで
 		if(get_magic_quotes_gpc()) { $out = stripslashes($out); }
-		
+
 		//全角→半角変換
 		if($hankaku == 1){
 			$out = zenkaku2hankaku($key,$out,$hankaku_array);
@@ -393,7 +394,7 @@ function confirmOutput($arr){
 	foreach($arr as $key => $val) {
 		$out = '';
 		if(is_array($val)){
-			foreach($val as $key02 => $item){ 
+			foreach($val as $key02 => $item){
 				//連結項目の処理
 				if(is_array($item)){
 					$out .= connect2val($item);
@@ -402,17 +403,17 @@ function confirmOutput($arr){
 				}
 			}
 			$out = rtrim($out,', ');
-			
+
 		}else{ $out = $val; }//チェックボックス（配列）追記ここまで
 		if(get_magic_quotes_gpc()) { $out = stripslashes($out); }
 		$out = nl2br(h($out));//※追記 改行コードを<br>タグに変換
 		$key = h($key);
-		
+
 		//全角→半角変換
 		if($hankaku == 1){
 			$out = zenkaku2hankaku($key,$out,$hankaku_array);
 		}
-		
+
 		$html .= "<tr><th>".$key."</th><td>".$out;
 		$html .= '<input type="hidden" name="'.$key.'" value="'.str_replace(array("<br />","<br>"),"",$out).'" />';
 		$html .= "</td></tr>\n";
@@ -517,7 +518,7 @@ function requireCheck($require){
 		$existsFalg = '';
 		foreach($_POST as $key => $val) {
 			if($key == $requireVal) {
-				
+
 				//連結指定の項目（配列）のための必須チェック
 				if(is_array($val)){
 					$connectEmpty = 0;
@@ -529,7 +530,7 @@ function requireCheck($require){
 								}
 							}
 						}
-						
+
 					}
 					if($connectEmpty > 0){
 						$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】は必須項目です。</p>\n";
@@ -541,18 +542,18 @@ function requireCheck($require){
 					$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】は必須項目です。</p>\n";
 					$res['empty_flag'] = 1;
 				}
-				
+
 				$existsFalg = 1;
 				break;
 			}
-			
+
 		}
 		if($existsFalg != 1){
 				$res['errm'] .= "<p class=\"error_messe\">【".$requireVal."】が未選択です。</p>\n";
 				$res['empty_flag'] = 1;
 		}
 	}
-	
+
 	return $res;
 }
 //リファラチェック
