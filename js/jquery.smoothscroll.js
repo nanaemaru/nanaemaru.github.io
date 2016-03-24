@@ -20,7 +20,7 @@ $(function($){
         var o = $.extend({
             easing    : 'swing', // 動作パターン
             speed     : 500,     // スクロールの速度
-            margintop : 0,       // スクロール位置の変更
+            margintop : 120px,       // スクロール位置の変更
             headerfix : ''       // 固定されているヘッダーのセレクタ
         }, config);
 
