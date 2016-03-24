@@ -17,7 +17,9 @@ body {
   background-image: url("../img/.jpg")
 }
 
-/*p.text200 { font-size: 200%; }
+p.100 { font-size: 150%; }
+
+/*
 p.text300 { font-size: 300%; }
 p.text400 {
             font-size: 400%;
