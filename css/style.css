@@ -69,6 +69,20 @@ nav:after {
 	padding-bottom:32768px;
 }
 
+#main2 {
+	box-sizing:border-box;
+	overflow:hidden;
+	float:left;
+	width:85%;
+	margin-bottom:-32768px;
+	padding-bottom:32768px;}
+
+#main2 p { font-size : 30px ;
+           position: relative;
+           top: -80px;
+           left: 5px;}
+
+
 
 #sub {
         margin: 15px;
@@ -512,7 +526,7 @@ footer {
 	background:#87cefa;
 }
 .totop img:hover {
-	background:#900000;
+	background:#dc143c;
 }
 
 /*================================================
